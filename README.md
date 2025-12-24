@@ -1,4 +1,4 @@
-# Simple cli to-do list (W.I.P)
+# Simple CLI to-do list (W.I.P)
 ## Format Guide:
 (WIP)
 ### Example:
