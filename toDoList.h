@@ -1,13 +1,18 @@
-#ifndef TO_DO_LIST
-#define TO_DO_LIST
+#ifndef TO_DO_LIST_H
+#define TO_DO_LIST_H
 
 #include <iostream>
 #include <vector>
 
+struct Task {
+    std::string m_name {};
+    bool completed {false};
+};
+
 class ToDoList {
     private:
         std::string m_filePath;
-        std::vector<std::string [2]> m_tasks {};
+        std::vector<Task> m_tasks {};
     
     public:
         ToDoList(std::string filePath)
