@@ -23,9 +23,11 @@ int main(int argc, char* argv[]){
     std::ifstream inputFile {filePath};
     std::stringstream outputContent {};
 
+    //FIXME: move to class file
     if (inputFile.is_open()){
-        for (std::string line[2] {}; std::getline(inputFile, line[0]); outputContent << '\n'){
-            outputContent << line[0] << ":: " << line[1];
+        for (std::string line[2] {}; std::getline(inputFile, line[0], ':'); outputContent << '\n'){
+            std::getline(inputFile, line[1]);
+            outputContent << line[0] << "::" << line[1];
         }
 
         printSS(outputContent);
