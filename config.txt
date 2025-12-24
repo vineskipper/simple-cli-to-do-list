@@ -1,8 +1,8 @@
 Date: N/A
 
 (task_list)
-	task uno : INCOMPLETE,
-	task dos : COMPLETE,
-	task tres : INCOMPLETE,
-	task cuatro : COMPLETE
+	task# : STATUS,
+	task# : STATUS,
+	task# : STATUS,
+	task# : STATUS
 ;
