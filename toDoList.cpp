@@ -21,7 +21,7 @@ void ToDoList::loadTasks(){
         }
 
     } else {
-        //FIXME: error handling;
+        //FIXME: error handling
     }
 }
 

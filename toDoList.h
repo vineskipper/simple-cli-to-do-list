@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <filesystem>
 
 struct Task {
     std::string name {};
@@ -12,7 +13,7 @@ struct Task {
 
 class ToDoList {
     private:
-        std::string m_filePath;
+        std::filesystem::path m_filePath;
         std::vector<Task> m_tasks {};
         std::ifstream m_file;
 
@@ -21,7 +22,7 @@ class ToDoList {
         void writeTasksToSS(std::stringstream& out);
         
     public:
-        ToDoList(std::string filePath)
+        ToDoList(std::filesystem::path filePath)
             : m_filePath {filePath}, m_file {filePath}
         {
             //FIXME: other setup stuff
@@ -29,12 +30,14 @@ class ToDoList {
         }
 
         ToDoList() = delete;
-
+        
+        /* FIXME: complete destructor
         ~ToDoList(){
             updateList();
             //FIXME: other clean up
             m_file.close();
         }
+        */
 
         void printTasks();
         void updateList();
