@@ -1,8 +1,8 @@
 Date: N/A
 
-(task_list)
-	task_name : STATUS,
-	task_name : STATUS,
-	task_name : STATUS,
-	task_name : STATUS
+!
+task_one : STATUS
+task_two : STATUS
+task_three : STATUS
+task_four : STATUS
 ;

@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iomanip> // for std::quoted
 #include <sstream>
+#include "toDoList.h"
 
 // prints the contents of a string stream
 void printSS(std::stringstream& stream){
