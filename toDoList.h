@@ -17,18 +17,27 @@ class ToDoList {
         std::ifstream m_file;
 
         void resetFilePointer();
+        void loadTasks();
+        void writeTasksToSS(std::stringstream& out);
         
     public:
         ToDoList(std::string filePath)
             : m_filePath {filePath}, m_file {filePath}
         {
-            // other setup stuff
+            //FIXME: other setup stuff
+            loadTasks();
         }
 
         ToDoList() = delete;
 
+        ~ToDoList(){
+            updateList();
+            //FIXME: other clean up
+            m_file.close();
+        }
+
         void printTasks();
-        void loadTasks(); //FIXME: I SHOULD BE A PRIVATE MEMBER FUNCTION
+        void updateList();
 };
 
 #endif
