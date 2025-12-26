@@ -4,6 +4,7 @@
 
 // returns choice number
 int startMenu(){
+    clearScreen();
     std::cout << "Options\n";
 
     return 0; //tmp
@@ -26,7 +27,7 @@ int main(){
         std::cin >> filePath;
     } while (!std::filesystem::exists(filePath));
     
-    ToDoList list {"exampleList.txt"}; //FIXME: THE FILE DOESN'T COMPILE BECAUSE OF ME
+    ToDoList list {filePath};
     
     std::cout << "\n\nworking\n\n";
     return 0;
