@@ -31,13 +31,13 @@ class ToDoList {
 
         ToDoList() = delete;
         
-        /* FIXME: complete destructor
+        //FIXME: complete destructor
+        
         ~ToDoList(){
             updateList();
             //FIXME: other clean up
             m_file.close();
         }
-        */
 
         void printTasks();
         std::stringstream updateList();
