@@ -19,7 +19,7 @@ class ToDoList {
 
         void resetFilePointer();
         void loadTasks();
-        void writeTasksToSS(std::stringstream& out);
+        void writeTasksTo(std::ostream& outputStream);
         
     public:
         ToDoList(std::filesystem::path filePath)
@@ -40,7 +40,7 @@ class ToDoList {
         */
 
         void printTasks();
-        void updateList();
+        std::stringstream updateList();
 };
 
 #endif

@@ -30,22 +30,36 @@ void ToDoList::resetFilePointer(){
     m_file.seekg(0);
 }
 
-void ToDoList::updateList(){
-    std::stringstream ss {};
+std::stringstream ToDoList::updateList(){
+    std::stringstream oldFileContent {};
+    
+    for (std::string line {}; std::getline(m_file, line); oldFileContent << '\n'){
+        oldFileContent << line;
+    }
 
-    ss << "Date: ";
-    ss << "N/A"; //FIXME: add actual date
-    ss << "\n\n";
+    m_file.close();
 
-    writeTasksToSS(ss);
+    std::ofstream listFile {m_filePath};
 
-    ss << ';';
+    listFile << "Date: ";
+    listFile << "N/A"; //FIXME: add actual date
+    listFile << "\n\n!\n";
+
+    writeTasksTo(listFile);
+
+    listFile << ';';
+
+    listFile.close();
+
+    m_file.open(m_filePath);
 
     //FIXME: other stuff further on
+
+    return oldFileContent;
 }
 
-void ToDoList::writeTasksToSS(std::stringstream& ss){
+void ToDoList::writeTasksTo(std::ostream& outputStream){
     for (Task task : m_tasks){
-        ss << task.name << " : " << ((task.completed) ? "Done" : "Incomplete") << '\n';
+        outputStream << task.name << " : " << ((task.completed) ? "Done" : "Incomplete") << '\n';
     }
 }
