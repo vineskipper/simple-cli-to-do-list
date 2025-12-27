@@ -79,3 +79,9 @@ void ToDoList::writeTasksTo(std::ostream& outputStream){
 void ToDoList::flipTaskStatus(int taskIndex){
     m_tasks.at(taskIndex).completed = !m_tasks.at(taskIndex).completed;
 }
+
+void ToDoList::resetTaskStatus(){
+    for (Task task : m_tasks){
+        task.completed = false;
+    }
+}

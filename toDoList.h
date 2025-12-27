@@ -20,12 +20,14 @@ class ToDoList {
         void resetFilePointer();
         void loadTasks();
         void writeTasksTo(std::ostream& outputStream);
+        void resetTaskStatus();
         
     public:
         ToDoList(std::filesystem::path filePath)
             : m_filePath {filePath}, m_file {filePath}
         {
             //FIXME: other setup stuff
+            //FIXME: check date to decide whether to reset status
             loadTasks();
         }
 
