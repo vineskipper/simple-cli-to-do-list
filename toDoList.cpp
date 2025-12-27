@@ -5,7 +5,7 @@ void ToDoList::printTasks(bool showIndex){
     if (showIndex){
         Task task {};
 
-        for (int i {0}; m_tasks.size(); i++){
+        for (int i {0}; i < m_tasks.size(); i++){
             task = m_tasks.at(i);
 
             std::cout << i + 1 << ".) " << task.name << " : " << ((task.completed) ? "Done" : "Incomplete") << '\n';
