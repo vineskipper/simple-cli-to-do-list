@@ -75,3 +75,7 @@ void ToDoList::writeTasksTo(std::ostream& outputStream){
         outputStream << task.name << " : " << ((task.completed) ? "Done" : "Incomplete") << '\n';
     }
 }
+
+void ToDoList::flipTaskStatus(int taskIndex){
+    m_tasks.at(taskIndex).completed = !m_tasks.at(taskIndex).completed;
+}

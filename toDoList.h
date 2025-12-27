@@ -41,6 +41,7 @@ class ToDoList {
 
         void printTasks(bool showIndex = false);
         std::stringstream updateList();
+        void flipTaskStatus(int taskIndex);
 };
 
 #endif
