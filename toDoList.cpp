@@ -1,7 +1,7 @@
 #include "toDoList.h"
 #include <sstream>
 
-void ToDoList::printTasks(bool showIndex = false){
+void ToDoList::printTasks(bool showIndex){
     if (showIndex){
         Task task {};
 
