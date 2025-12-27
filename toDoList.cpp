@@ -1,9 +1,21 @@
 #include "toDoList.h"
 #include <sstream>
 
-void ToDoList::printTasks(){
-    for (Task task : m_tasks){
-        std::cout << task.name << " : " << ((task.completed) ? "Done" : "Incomplete") << '\n';
+void ToDoList::printTasks(bool showIndex = false){
+    if (showIndex){
+        Task task {};
+
+        for (int i {0}; m_tasks.size(); i++){
+            task = m_tasks.at(i);
+
+            std::cout << i + 1 << ".) " << task.name << " : " << ((task.completed) ? "Done" : "Incomplete") << '\n';
+        }
+
+    } else {
+        for (Task task : m_tasks){
+            std::cout << task.name << " : " << ((task.completed) ? "Done" : "Incomplete") << '\n';
+        }
+   
     }
 }
 

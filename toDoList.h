@@ -39,7 +39,7 @@ class ToDoList {
             m_file.close();
         }
 
-        void printTasks();
+        void printTasks(bool showIndex = false);
         std::stringstream updateList();
 };
 
